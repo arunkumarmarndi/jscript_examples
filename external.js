@@ -8,22 +8,25 @@ function getComputerChoice(){
 function playAround(playerSelection,computerSelection){
     if (playerSelection.toUpperCase() == computerSelection.toUpperCase()){
         return "It is a draw!";
-    } else if(computerSelection.toUpperCase() == "PAPER"){
+    } else if((playerSelection.toUpperCase() == "ROCK" && computerSelection.toUpperCase() == "PAPER") || (playerSelection.toUpperCase() == "SCISSORS" && computerSelection.toUpperCase()=="ROCK") || (playerSelection.toUpperCase() == "PAPER" && computerSelection.toUpperCase()=="SCISSORS")){
         count -= 1;
         loss += 1;
-        return "You lose! Paper beats Rock";
+        return "You lose!"+ computerSelection.toUpperCase() + " beats " + playerSelection.toUpperCase();
     } else{
         count += 1;
         wins += 1;
-        return "You win! Rock beats Scissors";
+        return "You win! "+playerSelection.toUpperCase()+" beats "+computerSelection.toUpperCase();
     }
 }
 
 
-const playerSelection = "rock";
 
 function game(){
+    count = 0;
+    wins = 0;
+    loss = 0;
     for(let i=0;i<5;i++){
+        const playerSelection = prompt("Enter rock or paper or scissor: ");
         const computerSelection = getComputerChoice();
         playAround(playerSelection,computerSelection);
         console.log(playAround(playerSelection,computerSelection));
