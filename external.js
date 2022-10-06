@@ -1,7 +1,8 @@
 const array = ["Rock","Paper","Scissors"];
-function getComputerChoice(){
-    let x = Math.floor(Math.random()*3);
-    return x;
+function playAround(playerSelection,computerSelection){
+    //your code here!
 }
 
-console.log(array[getComputerChoice()]);
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playAround(playerSelection,computerSelection));
